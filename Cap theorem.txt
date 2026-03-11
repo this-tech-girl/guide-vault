@@ -1,0 +1,24 @@
+Most developers memorize CAP Theorem… but can’t apply it in system design interviews. 👀
+In distributed systems, you can’t have all three:
+Consistency, Availability, and Partition Tolerance.
+When a network partition happens, you must choose:
+1️⃣ CP (Consistency + Partition Tolerance)
+Prioritizes correct data over availability.
+If nodes can't communicate, the system may reject requests to avoid inconsistent data.
+👉 Example: Banking systems, financial transactions.
+
+2️⃣ AP (Availability + Partition Tolerance)
+System always responds, even during network failures.
+Data may be temporarily inconsistent, but will sync later.
+👉 Example: Social media feeds, DNS, product catalogs.
+
+3️⃣ CA (Consistency + Availability)
+Possible only when there is no network partition.
+Works in single-node or tightly coupled systems.
+👉 Example: Traditional relational databases in non-distributed setups.
+
+💡 Interview trick:
+In real distributed systems, Partition Tolerance is mandatory, so the real decision is usually CP vs AP.
+
+Star mark repo this if you’re preparing for system design interviews.
+Follow @this.tech.girl for more tech simplified 
