@@ -1,0 +1,31 @@
+Most developers write SQL queries… but very few actually understand how SQL executes them internally.
+
+In interviews, one common question is:
+Why does WHERE run before SELECT even though it’s written after it?
+
+Because SQL does NOT execute queries in the order we write them.
+It follows its own logical execution order.
+
+Here’s what actually happens inside the database:
+1️⃣ FROM – The database first identifies the table(s) involved.
+2️⃣ JOIN – If multiple tables exist, they are combined.
+3️⃣ WHERE – Rows are filtered based on conditions.
+4️⃣ GROUP BY – Remaining rows are grouped if aggregation is required.
+5️⃣ HAVING – Filters groups created by GROUP BY.
+6️⃣ SELECT – Only now the database chooses the columns to return.
+7️⃣ ORDER BY – Finally, the result is sorted.
+
+👉 This is why WHERE runs before SELECT — because the database first filters rows before deciding which columns to show.
+
+Think of it like this:
+You filter the data first, then choose what part of that data to display.
+Understanding this makes a huge difference when working with:
+• large datasets
+• performance optimization
+• debugging SQL queries
+• backend and data engineering interviews
+
+If you’re preparing for backend / database interviews, this is a concept you absolutely need to know.
+
+Save this for revision before your next interview.
+Follow @this.tech.girl for more backend, system design, SQL and coding interview concepts.
